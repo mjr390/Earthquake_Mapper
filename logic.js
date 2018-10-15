@@ -37,7 +37,7 @@ var meta = `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.g
             // Setting our circle's radius equal to the output of our markerSize function
             // This will make our marker's size proportionate to its population
             radius: dataFeatures[i].properties.mag * 10000
-          }).bindPopup("Magnitude: " + dataFeatures[i].properties.mag).addTo(myMap);
+          }).bindPopup("MAGNITUDE: " + dataFeatures[i].properties.mag + "\nLOCATION: " + dataFeatures[i].properties.place).addTo(myMap);
      
 
 }
