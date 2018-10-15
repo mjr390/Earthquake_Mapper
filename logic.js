@@ -51,7 +51,7 @@ var meta = `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.g
             fillColor: changeColor(dataFeatures[i].properties.mag),
             // Setting our circle's radius equal to the output of our markerSize function
             // This will make our marker's size proportionate to its population
-            radius: dataFeatures[i].properties.mag * 10000
+            radius: dataFeatures[i].properties.mag * 15000
           }).bindPopup("MAGNITUDE: " + dataFeatures[i].properties.mag + "\nLOCATION: " + dataFeatures[i].properties.place).addTo(myMap);
      
 
