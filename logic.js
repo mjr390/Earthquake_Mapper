@@ -26,21 +26,22 @@ var meta = `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.g
     var dataFeatures = eData.features
     // console.log(dataFeatures)
     for (var i = 0; i < dataFeatures.length; i++) {
-        console.log([dataFeatures[i].geometry.coordinates[0], dataFeatures[i].geometry.coordinates[1]])};
-        var plotCircles = [dataFeatures[i].geometry.coordinates[0], dataFeatures[i].geometry.coordinates[1]]
+        // console.log([dataFeatures[i].geometry.coordinates[0], dataFeatures[i].geometry.coordinates[1]])
+        var plotCircles = [dataFeatures[i].geometry.coordinates[1], dataFeatures[i].geometry.coordinates[0]]
         console.log(plotCircles)
 
-        // L.circle(plotCircles, {
-        //     fillOpacity: 0.75,
-        //     color: "white",
-        //     fillColor: "purple",
-        //     // Setting our circle's radius equal to the output of our markerSize function
-        //     // This will make our marker's size proportionate to its population
-        //     radius: 20000
-        //   }).addTo(myMap)//.bindPopup("<h1>" + cities[i].name + "</h1> <hr> <h3>Population: " + cities[i].population + "</h3>").addTo(myMap);
+        L.circle(plotCircles, {
+            fillOpacity: 0.75,
+            color: "white",
+            fillColor: "purple",
+            // Setting our circle's radius equal to the output of our markerSize function
+            // This will make our marker's size proportionate to its population
+            radius: 20000
+          }).addTo(myMap)//.bindPopup("<h1>" + cities[i].name + "</h1> <hr> <h3>Population: " + cities[i].population + "</h3>").addTo(myMap);
      
 
-});
+}
+  });
 
 
 
@@ -76,3 +77,6 @@ var meta = `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.g
 //     fillOpacity: 0.75,
 //     radius: 50000
 // }).addTo(myMap);  
+
+// var xx = [45.52, -122.69];
+// console.log(xx)
