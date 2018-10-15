@@ -28,16 +28,16 @@ var meta = `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.g
     for (var i = 0; i < dataFeatures.length; i++) {
         // console.log([dataFeatures[i].geometry.coordinates[0], dataFeatures[i].geometry.coordinates[1]])
         var plotCircles = [dataFeatures[i].geometry.coordinates[1], dataFeatures[i].geometry.coordinates[0]]
-        console.log(plotCircles)
+        // console.log(plotCircles)
 
         L.circle(plotCircles, {
-            fillOpacity: 0.75,
-            color: "white",
+            fillOpacity: 0.65,
+            color: "clear",
             fillColor: "purple",
             // Setting our circle's radius equal to the output of our markerSize function
             // This will make our marker's size proportionate to its population
-            radius: 20000
-          }).addTo(myMap)//.bindPopup("<h1>" + cities[i].name + "</h1> <hr> <h3>Population: " + cities[i].population + "</h3>").addTo(myMap);
+            radius: dataFeatures[i].properties.mag * 10000
+          }).bindPopup("Magnitude: " + dataFeatures[i].properties.mag).addTo(myMap);
      
 
 }
